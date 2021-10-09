@@ -17,7 +17,7 @@ func init() {
 }
 
 // main is the entry point for all Go programs.
-func main() {
+func mainw() {
 	// Create an unbuffered channel.
 	court := make(chan int)
 	// Add a count of two, one for each goroutine.
