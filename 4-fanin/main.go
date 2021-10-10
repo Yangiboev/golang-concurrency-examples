@@ -16,21 +16,22 @@ func boring(msg string) <-chan string {
 	}()
 	return c
 }
-func fanin(ch1, ch2 <-chan string) <-chan string {
-	c := make(chan string)
-	go func() {
-		for {
-			v1 := <-ch1
-			c <- v1
-		}
-	}()
-	go func() {
-		for {
-			c <- <-ch1
-		}
-	}()
-	return c
-}
+
+// func fanin(ch1, ch2 <-chan string) <-chan string {
+// 	c := make(chan string)
+// 	go func() {
+// 		for {
+// 			v1 := <-ch1
+// 			c <- v1
+// 		}
+// 	}()
+// 	go func() {
+// 		for {
+// 			c <- <-ch1
+// 		}
+// 	}()
+// 	return c
+// }
 func faninSample(cs ...<-chan string) <-chan string {
 	c := make(chan string)
 	for _, v1 := range cs {
