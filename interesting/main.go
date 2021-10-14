@@ -56,14 +56,14 @@ func main() {
 	i := 0
 	N := 1000
 	wg := sync.WaitGroup{}
-	mu := sync.Mutex{}
+	// mu := sync.Mutex{}
 	wg.Add(N)
 	for j := 1; j <= N; j++ {
 		go func(i *int) {
 			defer wg.Done()
-			mu.Lock()
+			// mu.Lock()
 			*i++
-			mu.Unlock()
+			// mu.Unlock()
 		}(&i)
 	}
 	wg.Wait()
