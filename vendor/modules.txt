@@ -1,0 +1,6 @@
+# github.com/kyokomi/emoji/v2 v2.2.8
+## explicit
+github.com/kyokomi/emoji/v2
+# golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+## explicit
+golang.org/x/sync/errgroup
